@@ -8,7 +8,7 @@ public class AttendanceSystem {
         // Step 1: Student data store in arrays
         int[] studentIDs = {101, 102, 103, 104, 105,106,109};
         String[] studentNames = {"Shahnawaz", "Aditya Raj", "inderjeet", "Priyanshu", "kishan","Parkash Kumar","jhon"};
- 
+  
         // Step 2: Attendance record array
         boolean[] isPresent = new boolean[studentIDs.length]; // false by default
 
