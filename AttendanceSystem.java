@@ -6,14 +6,14 @@ public class AttendanceSystem {
         Scanner sc = new Scanner(System.in);
 
         // Step 1: Student data store in arrays
-        int[] studentIDs = {101, 102, 103, 104, 105,106};
-        String[] studentNames = {"Shahnawaz", "Aditya Raj", "inderjeet", "Priyanshu", "kishan","Parkash Kumar"};
+        int[] studentIDs = {101, 102, 103, 104, 105,106,109};
+        String[] studentNames = {"Shahnawaz", "Aditya Raj", "inderjeet", "Priyanshu", "kishan","Parkash Kumar","jhon"};
  
         // Step 2: Attendance record array
         boolean[] isPresent = new boolean[studentIDs.length]; // false by default
 
-        System.out.println(" ATTENDANCE MANAGEMENT SYSTEM ");
-        System.out.println("Enter 0 to finish taking attendance.\n");
+        System.out.println(" BCA Class Attendance Management System ");
+        System.out.println("Enter 0 Present And Absent List.\n");
 
 
         while (true) {
@@ -40,15 +40,15 @@ public class AttendanceSystem {
             }
 
             if (!found) {
-                System.out.println(" Student with SID " + sid + " not present in class.");
+                System.out.println(" Student with SID "+ studentNames + sid + " not present in class.");
             }
         }
 
         // Step 4: Display attendance summary
-        System.out.println("\n ATTENDANCE SUMMARY ");
+        System.out.println("\n BCA Class Present or Absent List  ");
         for (int i = 0; i < studentIDs.length; i++) {
             String status = isPresent[i] ? "Present" : "Absent";
-            System.out.println(studentNames[i] + " (SID: " + studentIDs[i] + ") → " + status);
+            System.out.println(studentNames[i] + " (SID: " + studentIDs[i] + ") => " + status);
         }
 
         sc.close();
