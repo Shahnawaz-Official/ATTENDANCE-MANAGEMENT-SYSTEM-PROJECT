@@ -5,7 +5,6 @@ public class AttendanceSystem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Student data
         int[] rollNumbers = {
             1,2,3,4,5,6,7,8,9,10,
             11,12,13,14,15,16,17,18,19,20,
@@ -49,7 +48,7 @@ public class AttendanceSystem {
             System.out.print("Enter Roll No / Name / SID: ");
             String input = sc.nextLine().trim();
 
-            if (input.equals("0")) break; // exit
+            if (input.equals("0")) break; 
 
             boolean found = false;
 
