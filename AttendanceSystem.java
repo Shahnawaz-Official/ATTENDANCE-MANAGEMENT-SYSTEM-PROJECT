@@ -48,7 +48,7 @@ public class AttendanceSystem {
             System.out.print("Enter Roll No / Name / SID: ");
             String input = sc.nextLine().trim();
 
-            if (input.equals("0")) break; 
+            if (input.equals("0")) break;
 
             boolean found = false;
 
@@ -66,22 +66,36 @@ public class AttendanceSystem {
                     } else {
                         System.out.println("Already marked present for " + name);
                     }
-                    break; // stop loop after match
+                    break;
                 }
             }
 
             if (!found) {
-                System.out.println("Is Name Ka Student Nahi hei Please check Roll No / Name / SID.");
+                System.out.println("Is Name Ka Student Nahi Hai! Please check Roll No / Name / SID.");
             }
         }
 
         // Attendance Summary
-        System.out.println("\n BCA Class Attendance List");
+        System.out.println("\n BCA Class Attendance List ");
+        int presentCount = 0;
+
         for (int i = 0; i < studentIDs.length; i++) {
             String status = isPresent[i] ? "P" : "A";
+            if (isPresent[i]) presentCount++;
             System.out.println(rollNumbers[i] + ". " + studentNames[i] + " (SID: " + studentIDs[i] + ") => " + status);
         }
 
+        int totalStudents = studentIDs.length;
+        int absentCount = totalStudents - presentCount;
+
+        double presentPercentage = (presentCount * 100.0) / totalStudents;
+        double absentPercentage = (absentCount * 100.0) / totalStudents;
+
+        System.out.println("\n BCA Class Attendance Report ");
+        System.out.println("Total Students   : " + totalStudents);
+        System.out.println("Present Students : " + presentCount + " (" + String.format("%.2f", presentPercentage) + "%)");
+        System.out.println("Absent Students  : " + absentCount + " (" + String.format("%.2f", absentPercentage) + "%)");
+       
         sc.close();
     }
 }
